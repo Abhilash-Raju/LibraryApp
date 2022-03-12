@@ -3,11 +3,13 @@ const Bookdata = require("../model/Bookdata");
 const adminRouter =express.Router();
 
 function router(nav){
-       
+           
     adminRouter.get('/',(req,res)=>{
         res.render("addBook",{nav,
         title:'Add Books'});
     });
+
+
     adminRouter.post('/add',(req,res)=>{
         // res.send("Hi I am Added")
        let item = {

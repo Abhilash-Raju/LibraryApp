@@ -8,15 +8,14 @@ mongoose.connect("mongodb+srv://Abhilash:1289lash@abhicluster.zckzz.mongodb.net/
 const Schema = mongoose.Schema;
 
 // Creating a new Schema named BookSchema using constructor Schema
-const BookSchema = new Schema({
+const AuthorSchema = new Schema({
     title: String,
-    author: String,
-    genre: String,
-    image: String
+    image: String,
+    about: String,
 });
 
 // In order to use the new Schema created we need to create a Model using mongoose.model package ("Collection Name", "Schema Name")
-const Bookdata = mongoose.model("bookdata",BookSchema);
+const Authordata = mongoose.model("authordata",AuthorSchema);
 
 // Exporting the Model created (Bookdata)
-module.exports = Bookdata
+module.exports = Authordata

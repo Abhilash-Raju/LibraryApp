@@ -2,14 +2,18 @@
     const app = new express();
     const nav = [
         {link:'/books',name:'Books'},
+        {link:'/addBook',name:"Add Book"},
         {link:'/authors',name:"Authors"},
-        {link:'/admin',name:"Add Book"},
+        {link:'/addAuthor',name:"Add Author"},
         {link:'/signup',name:"Sign Up"},
         {link:'/login',name:"Login"}
-
     ]
+
     const booksRouter =require("./src/routes/bookRoutes")(nav)
     const adminRouter =require("./src/routes/adminRoutes")(nav)
+    const authorRouter =require("./src/routes/authorRoutes")(nav)
+    const addauthorRouter =require("./src/routes/addauthorRoutes")(nav)
+
     app.use(express.static('./public'))
     app.use(express.urlencoded({extended:true}));
     app.set('view engine','ejs');
@@ -26,6 +30,8 @@
     // });
 
     app.use('/books',booksRouter);
-    app.use('/admin',adminRouter);
+    app.use('/addBook',adminRouter);
+    app.use('/authors',authorRouter);
+    app.use('/addAuthor',addauthorRouter);
 
-    app.listen(4000,()=>{console.log("Welcome")});
+    app.listen(4000,()=>{console.log("Welcome to LibraryApp")});
