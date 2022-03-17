@@ -38,4 +38,4 @@
     app.use('/signup',signupRouter);
     app.use('/login',loginRouter);
 
-    app.listen(4000,()=>{console.log("Welcome to LibraryApp")});
+    app.listen(process.env.PORT || 5000,()=>{console.log("Welcome to LibraryApp")});
