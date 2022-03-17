@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Sign Up</title>
+		<title><%=title%></title>
 		<!-- <title>Storystrap Template</title> -->
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,6 +13,8 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="/css/styles.css" rel="stylesheet">
+    <link rel="stylesheet" href="/css/form.css">
+
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -94,16 +96,77 @@
           
           
           <!--/stories-->
-            <div class="row">    
-              <form method="GET" action="">
-                Title: <input type="text" name="title">
-                Author: <input type="text" name="author">
-                Genre: <input type="text" name="genre">
-                Image: <input type="file" name="image">
-                <button type="submit">Add</button>
+             
+                <div class="container text-center text-md-start mt-5" id="myform">
+                  <h2>Sign Up</h2>
+                  <br>
+                  <h6>Create your account. It's free and only take a minute.</h6>
+                  <form method="GET" action="./photogallery.html" id="form" class="form"  target="_blank" onsubmit="return validate()">
+                      <div class="flex-container" >
+                          <div class="flex-child form-control">
+                              <label for="firstname">First Name</label>
+                              <input type="text" placeholder="Enter your First Name" id="firstname" autocomplete="off"/>
+                              <i class="fas fa-check-circle"></i>
+                              <i class="fas fa-exclamation-circle"></i>
+                              <small>Error message</small>
+                          </div>
+                          <div class="flex-child form-control">
+                              <label for="lastname">Last Name</label>
+                              <input type="text" placeholder="Enter your Last Name" id="lastname" autocomplete="off" />
+                              <i class="fas fa-check-circle"></i>
+                              <i class="fas fa-exclamation-circle"></i>
+                              <small>Error message</small>
+                          </div>
+                      </div>
+                      <div class="mb-3 form-control">
+                          <label for="Email">Email</label>
+                          <input type="email" placeholder="Enter your Email" id="email" autocomplete="off"/>
+                          <i class="fas fa-check-circle"></i>
+                          <i class="fas fa-exclamation-circle"></i>
+                          <small>Error message</small>
+                      </div>
+                      <div class="mb-3 form-control">
+                          <label for="Phone Number">Phone Number</label>
+                          <input type="tel" placeholder="Enter Phone number as XXX-XXX-XXX or XXX.XXX.XXX or XXX XXX XXX" id="phone" pattern="/(^\d{3}-\d{3}-\d{4})|(^[\d{3}.\d{3}.\d{4})|(^\d{3}\s\d{3}\s\d{4})/" autocomplete="off"/>
+                          <i class="fas fa-check-circle"></i>
+                          <i class="fas fa-exclamation-circle"></i>
+                          <small>Error message</small>
+                      </div>
+                      <div class="mb-3 form-control">
+                          <label for="Password">Password</label>
+                          <input type="password" placeholder="Password" id="password" autocomplete="off"/>
+                          <div class="pw-display-toggle-btn">
+                          <i class="fas fa-eye" id ="myEye" ></i>
+                          <i class="fas fa-eye-slash" id ="myEye" ></i>
+                          </div>
+                          <div class="pw-strength">
+                              <span>Weak</span>
+                              <span></span>
+                          </div>
+                          <small>Error message</small>
+                      </div>
+                      <div class="mb-3 form-control">
+                          <label for="Password Confirmation">Confirm Password</label>
+                          <input type="password" placeholder="Re-enter Password" id="password2" autocomplete="off"/>
+                          <div class="pw-display-toggle-btn">
+  
+                          </div>
+                          <small>Error message</small>
+                      </div>
+                      <button type="submit" name="submitButton">Submit</button>
+                  </form>
+  
+                      <p class="mySignup" style="text-align: center;
+                          font-weight: bolder;">
+                          By clicking the Submit button,you agree to our <br />
+                          <a href="#">Terms and Condition</a> and <a href="#">Policy Privacy</a>
+                      </p>
+              
+                      <p class="para-2">
+                          Already have an account? <a href="./login">Login here</a>
+                      </p>
+          </div>
                 
-              </form>
-            </div>
           
           <!--/stories-->
           

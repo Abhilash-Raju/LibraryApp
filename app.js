@@ -13,6 +13,8 @@
     const adminRouter =require("./src/routes/adminRoutes")(nav)
     const authorRouter =require("./src/routes/authorRoutes")(nav)
     const addauthorRouter =require("./src/routes/addauthorRoutes")(nav)
+    const signupRouter =require("./src/routes/signupRoutes")(nav)
+    const loginRouter =require("./src/routes/loginRoutes")(nav)
 
     app.use(express.static('./public'))
     app.use(express.urlencoded({extended:true}));
@@ -33,5 +35,7 @@
     app.use('/addBook',adminRouter);
     app.use('/authors',authorRouter);
     app.use('/addAuthor',addauthorRouter);
+    app.use('/signup',signupRouter);
+    app.use('/login',loginRouter);
 
     app.listen(4000,()=>{console.log("Welcome to LibraryApp")});

@@ -7,19 +7,19 @@ function router(nav){
     //         title: "Family",
     //         author:"Raju",
     //         genre:"Drama",
-    //         img: "Fam.jpg"
+    //         image: "Fam.jpg"
     //     },
     //     {
     //         title: "Amma",
     //         author:"Usha",
     //         genre:"Love",
-    //         img: "Amma.jpg"
+    //         image: "Amma.jpg"
     //     },
     //     {
     //         title: "Lights",
     //         author:"Annu and Unni",
     //         genre:"Celebration",
-    //         img: "Lights.jpg"
+    //         image: "Lights.jpg"
     //     }
     // ];
     
@@ -37,7 +37,9 @@ function router(nav){
         const id =req.params.id;
         Bookdata.findOne({_id:id})
         .then(function(book){
+
             res.render("book",{nav,
+
             title:"Book",
             book});
         })
