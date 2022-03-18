@@ -3,17 +3,10 @@
 	margin: 0;
 	padding: 0;
 }
-a img{
-    border-radius: 100px;
-}
-/* body {
 
-} */
 
-div {
-    border: none;
-}
-div p{
+/* div p{
+	border: none;
     text-align: justify;
 }
 
@@ -29,8 +22,7 @@ a:hover{
 	color:purple;
 }
 h2 {
-	
-    text-align: center;
+	text-align: center;
     padding-top: 15px;
   }
   
@@ -57,7 +49,7 @@ h2 {
 	display: flex;
 } */
 
-  
+/*   
  #myform {
 	transition-property: 0.5;
 	max-width: 600px;
@@ -71,7 +63,7 @@ h2 {
 	padding: 30px 10px;	
 	background: rgba(255,255,255,0.3);
 
-} 
+} */
 
 .form-control {
     margin: 10px;
@@ -79,8 +71,6 @@ h2 {
 	position: relative;
 	background: rgba(255,255,255,0);
 	border: none;
-
-
 }
 
 .form-control label {
@@ -88,20 +78,18 @@ h2 {
 	display: inline-block;
 	margin-left: 10px;
 	margin-bottom: 5px;
-}
+} */
 
-.form-control input {
-	border-radius: 4px;
+/* .form-control input {
+	border-radius: 4px; */
 	/* display: flex; */
-	font-family: inherit;
+	/* font-family: inherit;
 	font-size: 14px;
-	padding: 10px; 
+	padding: 10px;  */
     /* border: none; */
 	/* width: 50%; */
-	background: rgba(255,255,255,0.2);
-    /* outline: 0; */
-	
-}
+	/* background: rgba(255,255,255,0.2); */
+    /* outline: 0; } */
 
 /* .form-control input:focus {
 	outline: 0;
@@ -144,23 +132,19 @@ h2 {
 }
 
 .form-control.success i.fa-eye {
-	color: #2ecc71;
-	
+	color: #2ecc71;	
 }
 
 .form-control.error i.fa-eye {
-	color: #e74c3c;
-	
+	color: #e74c3c;	
 }
 
 .form-control.success i.fa-eye-slash {
 	color: #2ecc71;
-	
 }
 
 .form-control.error i.fa-eye-slash {
 	color: #e74c3c;
-	
 }
 
 
@@ -178,7 +162,6 @@ h2 {
 } 
 
 .form button {
-
 	border-radius: 4px;
 	display: block;
 	font-weight: bolder;
