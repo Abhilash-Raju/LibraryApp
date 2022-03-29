@@ -1,142 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-		<meta charset="utf-8">
-		<title><%=title%></title>
-		<!-- <title>Storystrap Template</title> -->
-		<meta name="generator" content="Bootply" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-		<link href="/css/bootstrap.min.css" rel="stylesheet">
-		<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
-		<!--[if lt IE 9]>
-			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
-		<![endif]-->
-		<link href="/css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="/css/form.css">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>MyLibraryApp</title>
+    <script src="https://kit.fontawesome.com/859e7ab76e.js" crossorigin="anonymous"></script>
 
-	</head>
-	<body>
-<header class="navbar navbar-bright navbar-fixed-top" role="banner">
-  <div class="container">
-    <div class="navbar-header">
-      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <a href="/" class="navbar-brand">Home</a>
-    </div>
-    <nav class="collapse navbar-collapse" role="navigation">
-      <ul class="nav navbar-nav">
-        <%for(i=0;i<nav.length;i++){%> 
-        <li>
-          <a href="<%=nav[i].link%>"><%=nav[i].name%></a>
-        </li>
-        <%}%>
-      </ul>
-      <ul class="nav navbar-right navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-          <ul class="dropdown-menu" style="padding:12px;">
-            <form class="form-inline">
-              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-            </form>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<div id="masthead">  
-  <div class="container">
-    <div class="row">
-      <div class="col-md-7">
-        <h1>Sign Up
-          <p class="lead"></p>
-        </h1>
-        <!-- <h1>Storystrap
-          <p class="lead"></p>
-        </h1> -->
-      </div>
-      <div class="col-md-5">
-        <div class="well well-lg"> 
-          <div class="row">
-            <div class="col-sm-12">
-              
-			
-            </div>
-          </div>
-        </div>
-      </div>
-    </div> 
-  </div><!-- /cont -->
-  
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="top-spacer"> </div>
-      </div>
-    </div> 
-  </div><!-- /cont -->
-  
-</div>
-
-
-<div class="container">
-  <div class="row">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> 
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     
-    <div class="col-md-12"> 
-      
-      <div class="panel">
-        <div class="panel-body">
-          
-          
-          
-          <!--/stories-->
-          <div class="container text-center m-5 p-5">
+    <link rel='stylesheet' href='css/signup.css'>
+    <link rel='stylesheet' href='css/form.css'>
+    
+</head>
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark primary-color fixed-top">
 
-            <div class="container text-center col-6 mt-5" id="myform" style="border: 200px;">
+            <!-- Navbar brand -->
+            <a class="navbar-brand" href="/">MyLibraryApp</a>
+          
+            <!-- Collapse button -->
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+              aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="basicExampleNav">
+          
+              <!-- Links -->
+              <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                  <a class="nav-link" href="/login">Log In
+                    <span class="sr-only">(current)</span>
+                  </a>
+                </li>
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Sign Up</a>
+                </li>
+
+        
+          
+              </ul>
+              <!-- Links -->
+          
+
+            </div>
+            <!-- Collapsible content -->
+          
+    </nav>
+    <!--Navbar-->
+    
+
+          <!--/stories-->
+          <div class="container-fluid text-center p-5">
+
+            <div class="container-fluid text-center col-6 mt-5" id="myform">
                   <h2>Sign Up</h2>
                   <br>
                   <h6>Create your account. It's free and only take a minute.</h6>
                   
-                  <form method="GET" action="" id="form" class="form"  target="_blank" onsubmit="return validate()">
+                  <form method="GET" action="/signup/adduser" id="form" class="form align-items-center" onsubmit="return validate()">
                       <div class="flex-container" >
                           <div class="flex-child form-control">
+                            <br>
                               <label for="firstname">First Name</label>
-                              <input type="text" placeholder="Enter your First Name" id="firstname" autocomplete="off"/>
+                              <input type="text" placeholder="Enter your First Name" id="firstname" name="fname" autocomplete="off"/>
                               <i class="fas fa-check-circle"></i>
                               <i class="fas fa-exclamation-circle"></i>
                               <small>Error message</small>
                           </div>
                           <div class="flex-child form-control">
+                            <br>
                               <label for="lastname">Last Name</label>
-                              <input type="text" placeholder="Enter your Last Name" id="lastname" autocomplete="off" />
+                              <input type="text" placeholder="Enter your Last Name" id="lastname"name="lname" autocomplete="off" />
                               <i class="fas fa-check-circle"></i>
                               <i class="fas fa-exclamation-circle"></i>
                               <small>Error message</small>
                           </div>
                       </div>
+                      <br>
+                      <br>
                       <div class="mb-3 form-control">
                           <label for="Email">Email</label>
-                          <input type="email" placeholder="Enter your Email" id="email" autocomplete="off"/>
+                          <input type="email" placeholder="Enter your Email" id="email" name="userid" autocomplete="off"/>
                           <i class="fas fa-check-circle"></i>
                           <i class="fas fa-exclamation-circle"></i>
                           <small>Error message</small>
                       </div>
-                      <div class="mb-3 form-control">
-                          <label for="Phone Number">Phone Number</label>
-                          <input type="tel" placeholder="Enter Phone number as XXX-XXX-XXX or XXX.XXX.XXX or XXX XXX XXX" id="phone" pattern="/(^\d{3}-\d{3}-\d{4})|(^[\d{3}.\d{3}.\d{4})|(^\d{3}\s\d{3}\s\d{4})/" autocomplete="off"/>
-                          <i class="fas fa-check-circle"></i>
-                          <i class="fas fa-exclamation-circle"></i>
-                          <small>Error message</small>
-                      </div>
+                     <br>
                       <div class="mb-3 form-control">
                           <label for="Password">Password</label>
-                          <input type="password" placeholder="Password" id="password" autocomplete="off"/>
+                          <input type="password" placeholder="Password" id="password" name="pwdid" autocomplete="off"/>
                           <div class="pw-display-toggle-btn">
                           <i class="fas fa-eye" id ="myEye" ></i>
                           <i class="fas fa-eye-slash" id ="myEye" ></i>
@@ -146,15 +103,10 @@
                               <span></span>
                           </div>
                           <small>Error message</small>
+                          <br>
                       </div>
-                      <div class="mb-3 form-control">
-                          <label for="Password Confirmation">Confirm Password</label>
-                          <input type="password" placeholder="Re-enter Password" id="password2" autocomplete="off"/>
-                          <div class="pw-display-toggle-btn">
-  
-                          </div>
-                          <small>Error message</small>
-                      </div>
+                   <br>
+                   <br>
                       <button type="submit" name="submitButton">Submit</button>
                   </form>
   
@@ -171,62 +123,255 @@
                 
           </div>
           <!--/stories-->
-          
-          
-          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
-        
-          
-        </div>
-      </div>
-                                                                                       
-	                                                
-                                                      
-   	</div><!--/col-12-->
-  </div>
-</div>
-                                                
-                                                                                
-<hr>
 
-<div class="container" id="footer">
-  <div class="row">
-    <div class="col col-sm-12">
-      
-      <h1>Follow Us</h1>
-      <div class="btn-group">
-       <a class="btn btn-twitter btn-lg" href="#"><i class="icon-twitter icon-large"></i> Twitter</a>
-	   <a class="btn btn-facebook btn-lg" href="#"><i class="icon-facebook icon-large"></i> Facebook</a>
-	   <a class="btn btn-google-plus btn-lg" href="#"><i class="icon-google-plus icon-large"></i> Google+</a>
-      </div>
-      
-    </div>
-  </div>
-</div>
+    <br>
 
-<hr>
 
-<hr>
+    <!-- Footer -->
+    <footer class="page-footer font-small blue fixed-bottom">
 
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <ul class="list-inline">
-          <li><i class="icon-facebook icon-2x"></i></li>
-          <li><i class="icon-twitter icon-2x"></i></li>
-          <li><i class="icon-google-plus icon-2x"></i></li>
-          <li><i class="icon-pinterest icon-2x"></i></li>
-        </ul>
-        
-      </div>
-      <div class="col-sm-6">
-          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
-      </div>
-    </div>
-  </div>
-</footer>
-	<!-- script references -->
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
-		<script src="js/bootstrap.min.js"></script>
-	</body>
+            <!-- Copyright -->
+            <div class="footer-copyright text-center text-white py-3">© 2022 Copyright:
+            <a href="/"> MyLibraryApp</a>
+            </div>
+            <!-- Copyright end -->
+    
+            
+    </footer>
+    <!-- Footer End-->
+
+    <script src="js/signup.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+       <script>
+      const form = document.getElementById('form');
+const firstname = document.getElementById('firstname');
+const lastname = document.getElementById('lastname');
+const email = document.getElementById('email');
+const password = document.getElementById('password');
+const password2 = document.getElementById('password2');
+const phone = document.getElementById('phone');
+
+
+function validate() {
+	// trim to remove the whitespaces
+	const firstnameValue = firstname.value.trim();
+	const lastnameValue = lastname.value.trim();
+	const emailValue = email.value.trim();
+	const passwordValue = password.value.trim();
+	
+	var alpha= /^[a-zA-Z]+/;
+    var num = /[0-9]+/;
+	var space =/[\s]+/;
+
+    // First Name Validation
+
+    if(firstnameValue === '' || (firstnameValue.length<=2)) 
+	{
+		setErrorFor(firstname, 'Firstname should be more than 2 alphabets');
+		return false;
+	}
+	
+	else if (firstnameValue.length>20) 
+	{
+		setErrorFor(firstname, 'Firstname should be less than 20 alphabets');
+				return false;
+	}
+	else if(!firstnameValue.match(alpha))  
+	{
+			setErrorFor(firstname, 'Remove special characters');
+					return false;
+	} 
+    else if(firstname.value.match(space))
+	{
+			setErrorFor(firstname, 'Remove Spaces');
+					return false;
+	} 
+    else if(firstnameValue.match(num))
+	{
+			setErrorFor(firstname, 'Remove numbers');
+					return false;
+	} 
+	
+	else 
+	{
+		setSuccessFor(firstname);
+
+                // Last Name Validation
+
+				if(lastnameValue === '' || (lastnameValue.length<=2))
+				{
+				setErrorFor(lastname, 'Lastname should more than 2 alphabets');
+						return false;
+
+				}  
+				
+				else if (lastnameValue.length>20) 
+				{
+					setErrorFor(lastname, 'Lastname should be less than 20 alphabets');
+							return false;
+				}
+				else if(!lastnameValue.match(alpha))
+				{
+					setErrorFor(lastname, 'Remove special characters');
+							return false;
+
+				} 
+                else if(lastname.value.match(space)) 
+				{
+					setErrorFor(lastname, 'Remove spaces');
+							return false;
+
+				} 
+                else if(lastnameValue.match(num))
+				{
+					setErrorFor(lastname, 'Remove numbers');
+							return false;
+
+				} 
+				
+				else 
+				{
+					setSuccessFor(lastname);
+
+                    // Email Validation
+
+					if(emailValue === '') 
+					{
+						setErrorFor(email, 'Email cannot be blank');
+								return false;
+
+					}
+                    else if (email.value.match(space)) 
+					{
+						setErrorFor(email, 'Remove spaces');
+								return false;
+
+					}
+                     else if (!isEmail(emailValue)) 
+					{
+						setErrorFor(email, 'Not a valid email');
+								return false;
+
+					}
+                     else 
+					{
+						setSuccessFor(email);
+
+                                
+
+										if(passwordValue === '') 
+										{
+											setErrorFor(password, 'Password cannot be blank');
+													return false;
+
+										}
+										else if(password.value.match(space)) 
+										{
+											setErrorFor(password, 'Remove spaces');
+													return false;
+
+										} 
+                                        else if(passwordValue.length  <8) 
+                                        {
+											setErrorFor(password, 'Atleast 8 characters are required');
+													return false;
+
+										} 
+										 else 
+										{
+											setSuccessFor(password);
+
+												return true;
+
+											}
+										}
+									}
+					}
+				}
+	
+
+function setErrorFor(input, message) {
+	const formControl = input.parentElement;
+	const small = formControl.querySelector('small');
+	formControl.className = 'form-control error';
+	small.innerText = message;
+}
+
+function setSuccessFor(input) {
+	const formControl = input.parentElement;
+	formControl.className = 'form-control success';
+}
+	
+function isEmail(email) 
+{
+	return /^([\w\.-]+)@([\w\-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/.test(email);
+}
+
+
+
+// Password strength
+
+function getPasswordStrength(password){
+	let s = 0;
+	if(password.length > 6){
+	  s++;
+	}
+	if(password.length > 8){
+	  s++;
+	}
+	if(/[A-Z]/.test(password)){
+	  s++;
+	}
+	if(/[0-9]/.test(password)){
+	  s++;
+	}
+	if(/[^A-Za-z0-9]/.test(password)){
+	  s++;
+	}
+	return s;
+  }
+  document.querySelector(".form-control #password").addEventListener("focus",function(){
+	document.querySelector(".form-control .pw-strength").style.display = "block";
+  });
+
+
+  document.querySelector(".form-control .pw-display-toggle-btn").addEventListener("click",function(){
+	let el = document.querySelector(".form-control .pw-display-toggle-btn");
+	if(el.classList.contains("active")){
+	  document.querySelector(".form-control #password").setAttribute("type","password");
+	  el.classList.remove("active");
+	} else {
+	  document.querySelector(".form-control #password").setAttribute("type","text");
+	  el.classList.add("active");
+	}
+  });
+  
+  
+  
+  document.querySelector(".form-control #password").addEventListener("keyup",function(e){
+	let password = e.target.value;
+	let strength = getPasswordStrength(password);
+	let passwordStrengthSpans = document.querySelectorAll(".form-control .pw-strength span");
+	strength = Math.max(strength,1);
+	passwordStrengthSpans[1].style.width = strength*20 + "%";
+	if(strength < 2){
+	  passwordStrengthSpans[0].innerText = "Weak";
+	  passwordStrengthSpans[0].style.color = "#111";
+	  passwordStrengthSpans[1].style.background = "#d13636";
+	} else if(strength >= 2 && strength <= 4){
+	  passwordStrengthSpans[0].innerText = "Medium";
+	  passwordStrengthSpans[0].style.color = "#111";
+	  passwordStrengthSpans[1].style.background = "#e6da44";
+	} else {
+	  passwordStrengthSpans[0].innerText = "Strong";
+	  passwordStrengthSpans[0].style.color = "#fff";
+	  passwordStrengthSpans[1].style.background = "#20a820";
+	}
+  });
+
+    </script>
+
+  
+
+</body>
 </html>

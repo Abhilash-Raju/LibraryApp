@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Add Books</title>
+		<title>Add Author</title>
 		<!-- <title>Storystrap Template</title> -->
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,6 +13,11 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="/css/styles.css" rel="stylesheet">
+		<link href="/css/back.css" rel="stylesheet">
+    <style>
+
+
+    </style>
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -24,7 +29,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/" class="navbar-brand">Home</a>
+      <a href="./home" class="navbar-brand">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
@@ -52,87 +57,80 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Add Book
+        <h1>Add Author
           <p class="lead"></p>
         </h1>
         <!-- <h1>Storystrap
           <p class="lead"></p>
         </h1> -->
       </div>
-      <div class="col-md-5">
-        <div class="well well-lg"> 
-          <div class="row">
-            <div class="col-sm-12">
-              
-			
-            </div>
-          </div>
-        </div>
-      </div>
+
     </div> 
   </div><!-- /cont -->
   
-  <div class="container">
+  <!-- <div class="container">
     <div class="row">
       <div class="col-md-12">
         <div class="top-spacer"> </div>
       </div>
     </div> 
-  </div><!-- /cont -->
+  </div> -->
   
 </div>
 
 
-<div class="container">
-  <div class="row">
+<div class="container px-4" id ='#myform'>
+  <div class="row gy-6">
     
     <div class="col-md-12"> 
       
       <div class="panel">
-        <div class="panel-body">
+        <div class="panel-body"> 
           
           
           
           <!--/stories-->
-            <div class="row">    
+            <div class="col-6">    
               <form method="POST" action="/addAuthor/add">
+
                 <div class="mb-3 form-control">
                   <label for="Title">Author Name</label>
                   <input type="text" placeholder="Enter Author Name" id="title" autocomplete="off" name="title"/>
                 </div>
-                <div class="mb-3 form-control">
-                    <label for="About">About</label>
-                    <input type="" placeholder="About" id="author" autocomplete="off" name="about"/>
-                </div>
-                <div class="mb-3 form-control">
+                <br>
+                <div class="mb-3 p-4 form-control">
                     <label for="Image">Image</label>
                     <input type="file" placeholder="Enter Image" id="image" name="image"/>
                 </div>
                 <br>
+              <br>
+
+                <div class="mb-3 form-control">
+                    <label for="About">About</label>
+                    <br>
+                    <textarea class="form-control" id="textarea1" rows="2">
+                    </textarea>
+                </div>
+
                 <br>
-                <button type="submit">Add</button>
+                <br>
+                <br>
+                <br>
+              <button type="submit">Add Author</button>
                 
               </form>
             </div>
-          
-          <!--/stories-->
-          
-          
-          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
-        
-          
+         
         </div>
       </div>
                                                                                        
 	                                                
                                                       
-   	</div><!--/col-12-->
+   	</div>
   </div>
 </div>
                                                 
                                                                                 
-<hr>
-
 <div class="container" id="footer">
   <div class="row">
     <div class="col col-sm-12">
@@ -147,10 +145,6 @@
     </div>
   </div>
 </div>
-
-<hr>
-
-<hr>
 
 <footer>
   <div class="container">

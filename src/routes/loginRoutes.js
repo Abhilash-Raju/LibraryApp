@@ -1,6 +1,10 @@
 const express = require('express'); 
 const loginRouter = express.Router();
-// const user = require('../data/user');
+const user = require('../data/user');
+let alert = require('alert'); 
+// const {Signupdata} = require("../model/Signupdata");
+// const SignupSchema = require("../model/Signupdata");
+
 
 function router(nav){
 loginRouter.get('/',function(req,res){
@@ -9,43 +13,45 @@ loginRouter.get('/',function(req,res){
     
 })
 
+// User Authentication
 
-// loginRouter.get("/check",function(req,res){
-//     var checkuser = {
-//         uid:req.param("uid"),
-//         pwd:req.param("pwd")
-//     };
+loginRouter.get("/check",function(req,res){
+    var checkuser = {
+        "userid":req.param("userid"),
+        "pwdid":req.param("pwdid")
+    };
     
-//     console.log(checkuser);
-//     var flag=false;
-
-// //    var flagg = user.find((e)=>{
-//        for(let i=0;i<user.length;i++){
+    console.log(checkuser);
+    var flag=false;
+    
+//    var flagg = user.find((e)=>{
+       for(let i=0;i<user.length;i++){
         
-//         if(checkuser.uid==user[i].uid && checkuser.pwd==user[i].pwd)
-//         {
-            
-//             flag=true;
-//             break;
-//         }
-//         else{
-//                 flag=false;
-//             }
-//         };
+        if((checkuser.userid==user[i].userid && checkuser.pwdid==user[i].pwdid))
+        {
+            // alert (signupdata)
+            flag=true;
+            break;
+        }
+        else{
+                flag=false;
+            }
+        };
 
-//         console.log(flag);
+        console.log(flag);
 
-// if(flag==true){
-//     // alert("User Verified.Click to continue");
-//     res.redirect("/home")
-// }
-// else{
-//     // alert("User Verification Failed");
-//     res.redirect("/signup");
-// }
+if(flag==true){
+    alert("User Verified.Click to continue");
+    res.redirect("/home")
+}
+else{
+    alert("User Verification Failed");
+    res.redirect("/signup");
+}
 
-// });
-return loginRouter
+});
+
+  return loginRouter
 
 }
 

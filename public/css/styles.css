@@ -1,11 +1,15 @@
-/* override bootstrap styles */
-@import url('http://fonts.googleapis.com/css?family=Oswald:300,400:latin,latin-ext');
 
 .navbar-form input, .form-inline input {
   width:auto;
 }
 
+html{
+  height: 100%;
+}
 body {
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
   padding-top:50px;
   color:#646464;
   background-color:#efefef;
@@ -16,18 +20,15 @@ h1,h2,h3,.highlight,.navbar a,#masthead h4 {
 }
 
 footer {
-
-  margin-top:40px;
+  margin-top:auto;
   padding-top:40px;
   padding-bottom:40px;
   background-color:#cecece;
- 
 }
 
 
 #masthead {
   min-height:199px;
-  background-color:#000044;
   color:#aaaacc;
 }
 
@@ -38,13 +39,6 @@ footer {
   margin-top:50px;
 }
 
-#masthead .well {
-  margin-top:31px;
-  background-color:#111166;
-  border-color:#000022;
-  color:#efefff;
-  min-height:127px;
-}
 
 #topPanel {
   padding-top:0px;
@@ -91,7 +85,6 @@ a,a:hover {
 .navbar-bright a, .navbar-bright .navbar-brand, #masthead h4 {
   color:#ccccdd;
   font-size:14px;
-  text-transform: uppercase;
   letter-spacing:.08em;
 }
 

@@ -2,68 +2,55 @@
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
-}
-
-
-/* div p{
-	border: none;
-    text-align: justify;
-}
-
-
-a {
-	
-    text-decoration: none;
-    color: inherit;
-    
-}
-a:hover{
-	text-decoration: solid;
-	color:purple;
-}
-h2 {
 	text-align: center;
+}
+
+
+#basicExampleNav a:hover{
+    background-color:rgba(9, 105, 73, 0.842) ;
+    border-radius: 10px ;
+
+}
+
+h2 {
     padding-top: 15px;
   }
-  
-  h6 {
-    text-align: center;
-  }
-  
+
 
   p {
     text-align: center;
-    padding-top: 20px;
     font-size: 15px;
   }
   
   .para-2 {
-    text-align: center;
-    font-size: 15px;
 	font-weight: bolder;
-	padding: 30px;
-    margin-bottom: 10px;
+    padding-bottom: 10px;
   }
 
-/* .flex-container {
+.flex-container {
 	display: flex;
-} */
+}
 
-/*   
+body {
+	background-image: url('../images/Wallpaper1.webp');
+    background-size: cover;
+	background-repeat: no-repeat;
+}
+  
  #myform {
 	transition-property: 0.5;
-	max-width: 600px;
-	background: radial-gradient(circle, rgba(250,221,175,1) 0%, rgba(160,186,145,0.9028653697807247) 55%, rgba(133,228,255,0.9140698515734419) 97%);
+	max-width: 550px;
+	background: linear-gradient(90deg, aqua 0%, dodgerblue 100%);	
 	border-radius: 5px;
-	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-	padding: 30px 30px 0 30px;
+	padding: 30px 60px 0 30px;
+	align-items: center;
 }
 
 .form {
 	padding: 30px 10px;	
-	background: rgba(255,255,255,0.3);
-
-} */
+	background: rgba(255,255,255,0);
+	border-radius: 5px;
+}
 
 .form-control {
     margin: 10px;
@@ -78,24 +65,25 @@ h2 {
 	display: inline-block;
 	margin-left: 10px;
 	margin-bottom: 5px;
-} */
+} 
 
-/* .form-control input {
-	border-radius: 4px; */
-	/* display: flex; */
-	/* font-family: inherit;
+.form-control input {
+	border-radius: 4px;
+	display: flex;
+	font-family: inherit;
 	font-size: 14px;
-	padding: 10px;  */
-    /* border: none; */
-	/* width: 50%; */
-	/* background: rgba(255,255,255,0.2); */
-    /* outline: 0; } */
+	padding: 10px; 
+	position: relative;
+    border: none;
+	width: 100%;
+	background: rgba(255,255,255,0.2);
+    outline: 0; }
 
-/* .form-control input:focus {
+.form-control input:focus {
 	outline: 0;
 	border-color: #777;	
 	background: rgba(255,255,255,0.6);
-} */
+}
 
 .form-control.success input {
 	border-color: #2ecc71;
@@ -166,7 +154,7 @@ h2 {
 	display: block;
 	font-weight: bolder;
 	padding: 10px;
-	margin-top: 20px;
+	margin: 20px 0 0 10px;
 	width: 100%;
     border: none;
     background-color: #49c1a2;
@@ -181,7 +169,7 @@ h2 {
 /* Password Strength */
 #myEye{
 	position: absolute;
-	top: 15px;
+	top: 25px;
 	right: 20px;
 }
 
@@ -208,8 +196,8 @@ h2 {
 
 
 .form-control .pw-strength {
-  position:relative;
-  width:100%;
+  position:absolute;
+  width:91%;
   height:20px;
   margin-top:10px;
   text-align:center;
@@ -222,7 +210,7 @@ h2 {
 
 }
 .form-control .pw-strength span:nth-child(1) {
-  position:relative;
+  position:absolute;
   font-size:12px;
   color:#111;
   z-index:2;

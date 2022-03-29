@@ -2,27 +2,7 @@ const express = require("express");
 const Bookdata = require("../model/Bookdata");
 const booksRouter =express.Router();
 function router(nav){
-    // var books = [
-    //     {
-    //         title: "Family",
-    //         author:"Raju",
-    //         genre:"Drama",
-    //         image: "Fam.jpg"
-    //     },
-    //     {
-    //         title: "Amma",
-    //         author:"Usha",
-    //         genre:"Love",
-    //         image: "Amma.jpg"
-    //     },
-    //     {
-    //         title: "Lights",
-    //         author:"Annu and Unni",
-    //         genre:"Celebration",
-    //         image: "Lights.jpg"
-    //     }
-    // ];
-    
+        
     booksRouter.get('/',(req,res)=>{
         Bookdata.find()
         .then(function(books){
