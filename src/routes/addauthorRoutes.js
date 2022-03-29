@@ -3,59 +3,6 @@ const Authordata = require("../model/Authordata");
 const addauthorRouter =express.Router();
 function router(nav){
     
-    // var authors = [
-    //     {
-    //         title:"Raju",
-    //         about:"Drama",
-    //         image: "Fam.jpg"
-    //     },
-    //     {
-    //         title:"Usha",
-    //         about:"Love",
-    //         image: "Amma.jpg"
-    //     },
-    //     {
-    //         title:"Annu and Unni",
-    //         about:"Celebration",
-    //         image: "Lights.jpg"
-    //     }
-    // ];
-
-    // All the Authors Routing    
-    // authorRouter.get('/',(req,res)=>{
-    //     Authordata.find()
-    //     .then(function(authors){
-    //         res.render("authors",{nav,
-    //         title:'Authors',
-    //         authors});
-    //     })
-
-        
-    // });
-    // // authorRouter.get('/',(req,res)=>{
-        
-    // //         res.render("authors",{nav,
-    // //         title:'Authors',
-    // //         authors});
-    // //     })
-    
-    // // Single Author Routing
-    // authorRouter.get('/:id',(req,res)=>{
-    //     const id =req.params.id;
-    //     Authordata.findOne({_id:id})
-    //     .then(function(author){
-    //         res.render("author",{nav,
-    //         title:"Author",
-    //         author});
-    //     })
-    // });
-    // // authorRouter.get('/:id',(req,res)=>{
-    // //     const id =req.params.id;
-    // //     res.render("author",{nav,
-    // //     title:'Author',
-    // //     author:authors[id]});
-    // // })
-
     // Add Author Routing
     addauthorRouter.get('/',(req,res)=>{
         res.render("addAuthor",{nav,
