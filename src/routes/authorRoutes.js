@@ -25,30 +25,48 @@ function router(nav){
             author});
         })
     });
-    // authorRouter.get('/:id',(req,res)=>{
-    //     const id =req.params.id;
-    //     res.render("author",{nav,
-    //     title:'Author',
-    //     author:authors[id]});
-    // })
+   
+    authorRouter.post('/delete', function (req, res) {
 
-    // // Add Author Routing
-    // authorRouter.get('/',(req,res)=>{
-    //     res.render("addAuthor",{nav,
-    //     title:'Add Author'});
-    // });
+        const id = req.body.id;  
     
-    // authorRouter.post('/add',(req,res)=>{
-    //     // res.send("Hi I am Added")
-    //    let item = {
-    //        title: req.body.title,
-    //        image: req.body.image,
-    //        about: req.body.about
-    //     } 
-    // let author= Authordata(item);
-    // author.save(); //Saving in Database
-    // res.redirect("/authors"); //Redirecting to Books page once new book is added
-    // });
+        Authordata.findOneAndDelete({ _id: id })
+            .then(function () {
+    
+                res.redirect('/authors')
+    
+            })  
+    })
+    
+    
+    
+    //router to edit author
+    authorRouter.post('/edit', function (req, res) {
+    
+        Authordata.findById(req.body.id, function(err, data){
+            if (err) {
+                throw err;
+            }
+            else {
+                res.render('editauthor', {nav, data})
+            }
+        })
+    })
+    authorRouter.post('/update', function (req, res) {
+
+        Authordata.findByIdAndUpdate(req.body.id, { $set: req.body }, function (err, data) {
+            if (err) {
+                res.json({ status: "Failed" });
+            }
+            else if (data.n == 0) {
+                res.json({ status: "No match Found" });
+            }
+            else {
+                res.redirect("/authors")
+            }
+    
+        })  
+    })
     return authorRouter
 }
 

@@ -6,7 +6,7 @@ let alert = require('alert');
 // const SignupSchema = require("../model/Signupdata");
 
 
-function router(nav){
+function router(nav,authUser){
 loginRouter.get('/',function(req,res){
 
     res.render('login',{nav,title:'Login'});
@@ -15,7 +15,7 @@ loginRouter.get('/',function(req,res){
 
 // User Authentication
 
-loginRouter.get("/check",function(req,res){
+loginRouter.get("/check",authUser,function(req,res){
     var checkuser = {
         "userid":req.param("userid"),
         "pwdid":req.param("pwdid")

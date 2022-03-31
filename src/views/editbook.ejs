@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 		<meta charset="utf-8">
-		<title>Edit Author</title>
+		<title>Edit Book</title>
 		<!-- <title>Storystrap Template</title> -->
 		<meta name="generator" content="Bootply" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -13,10 +13,10 @@
 			<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
 		<![endif]-->
 		<link href="/css/styles.css" rel="stylesheet">
-    <style>
+    <link href="/css/back.css" rel="stylesheet">
 
-
-    </style>
+    <!-- Website Icon -->
+ <link rel="icon" href="../images/Scenery.jpg" type="image/x-icon" />
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -38,16 +38,7 @@
         </li>
         <%}%>
       </ul>
-      <ul class="nav navbar-right navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-          <ul class="dropdown-menu" style="padding:12px;">
-            <form class="form-inline">
-              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-            </form>
-          </ul>
-        </li>
-      </ul>
+
     </nav>
   </div>
 </header>
@@ -56,72 +47,51 @@
   <div class="container">
     <div class="row">
       <div class="col-md-7">
-        <h1>Edit Author
+        <h1>Edit Book
           <p class="lead"></p>
         </h1>
-        <!-- <h1>Storystrap
-          <p class="lead"></p>
-        </h1> -->
+
       </div>
-      <div class="col-md-5">
-        <div class="well well-lg"> 
-          <div class="row">
-            <div class="col-sm-12">
-              
-			
-            </div>
-          </div>
-        </div>
-      </div>
+    
     </div> 
-  </div><!-- /cont -->
-  
-  <!-- <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="top-spacer"> </div>
-      </div>
-    </div> 
-  </div> -->
-  
+  </div>
 </div>
 
 
-<div class="container px-4">
-  <div class="row gy-6">
-    
-    <div class="col-md-12"> 
-      
-      <div class="panel">
-        <div class="panel-body"> 
-          
-          
-          
+<div class="container px-4" id="myform">
+
           <!--/stories-->
             <div class="col-6">    
                 <!-- Default form contact -->
-                <form class="container editbook text-center border border-light p-5 justify-content-center" action="/books/update" method="POST">
+                <form class="form text-center border border-light p-5 justify-content-center" action="/books/update" method="POST">
 
 
 
-                  <p class="h4 mb-4">Edit Book Form</p>
+                  <label class="h4 mb-4">Edit Book Form</label>
 
                   <!-- Title -->
-                  <input id="title" name="title" type="text" value="<%=data.title%>"  class="form-control mb-4" placeholder="Book Name">
+                  <div class="mb-3 form-control">
+                    <input id="title" name="title" type="text" value="<%=data.title%>"  class="mb-4" placeholder="Book Name">
+                  </div>
 
                   <br>
                   <!-- Author -->
-                  <input id="author" name="author" type="text" value="<%=data.author%>"  class="form-control mb-4" placeholder="Author Name">
+                  <div class="mb-3 form-control">
+                    <input id="author" name="author" type="text" value="<%=data.author%>"  class="mb-4" placeholder="Author Name">
+                  </div>
 
                   <br>
                   <!-- Image -->
-                  <input id="image" name="image" type="file" value="/images/<%=data.image%>"  class="form-control mb-4" placeholder="Upload Image">
+                  <div class="mb-3 form-control">
+                    <input id="image" name="image" type="file" value="/images/<%=data.image%>"  class="mb-4" placeholder="Upload Image">
+                  </div>
 
 
                   <br>
                   <!-- About -->
-                  <div class="form-group">
-                      <input id="about" value="<%=data.about%>" name="about" class="form-control rounded-0" id="exampleFormControlTextarea2" rows="3" placeholder="About Book (less than 150 words)">
+                  <div class="form-control mb-3">
+
+                      <input id="about" value="<%=data.about%>" name="about" class="mb-4" id="textarea2" rows="5" placeholder="About Book (less than 150 words)">
                   </div>
 
                   <br>
@@ -141,13 +111,7 @@
             </div>
          
         </div>
-      </div>
-                                                                                       
-	                                                
-                                                      
-   	</div>
-  </div>
-</div>
+    
                                                 
                                                                                 
 

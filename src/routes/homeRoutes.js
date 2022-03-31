@@ -1,10 +1,12 @@
 const express = require('express'); 
 const homeRouter = express.Router();
-
-homeRouter.get('/',function(req,res){
-
-    res.render('home',{});
+function router(authUser){
+    homeRouter.get('/',authUser,function(req,res){
     
-})
+        res.render('home',{});
+        
+    })
+return homeRouter
+}
 
-module.exports = homeRouter;
+module.exports = router;

@@ -14,7 +14,8 @@
 		<![endif]-->
 		<link href="css/styles.css" rel="stylesheet">
     <link href="/css/back.css" rel="stylesheet">
-
+<!-- Website Icon -->
+<link rel="icon" href="../images/Scenery.jpg" type="image/x-icon" />
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -64,10 +65,10 @@
 <div class="container">
   <div class="row">
     
-    <div class="col-md-12"> 
+    <div class="col-md-12" > 
       
-      <div class="panel">
-        <div class="panel-body">
+      <div class="panel" >
+        <div class="panel-body mainbody">
           
           
           
@@ -81,10 +82,10 @@
               <div class="col-md-10 col-sm-9">
                 <h3><%=authors[i].title%></h3>
                 <div class="row">
-                  <div class="col-xs-9">
-                    <div style="font-family:courier,'new courier';" class="text-muted"><%=authors[i].about%>  
+                  <div class="col-xs-9 main">
+                    <div style="font-family:courier,'new courier';" ><%=authors[i].about%>  
                         <!-- • <a href="/authors/<%=i%>" class="text-muted">Read More</a> -->
-                        <a href="/authors/<%=authors[i]._id%>" class="text-muted">Read More</a>
+                        <a href="/authors/<%=authors[i]._id%>">Read More</a>
                     </div>
                     </h4></div>
                   <div class="col-xs-3"></div>
@@ -125,24 +126,17 @@
 </div>
 
 
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <ul class="list-inline">
-          <li><i class="icon-facebook icon-2x"></i></li>
-          <li><i class="icon-twitter icon-2x"></i></li>
-          <li><i class="icon-google-plus icon-2x"></i></li>
-          <li><i class="icon-pinterest icon-2x"></i></li>
-        </ul>
-        
-      </div>
-      <div class="col-sm-6">
-          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
-      </div>
-    </div>
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark pt-2 fixed-bottom">
+    
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2022 Copyright:
+    <a href="/home"> MyLibraryApp</a>
   </div>
+  <!-- Copyright -->
+
 </footer>
+<!-- Footer end -->
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>

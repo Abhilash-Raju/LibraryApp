@@ -14,7 +14,8 @@
 		<![endif]-->
 		<link href="/css/styles.css" rel="stylesheet">
     <link href="/css/back.css" rel="stylesheet">
-
+<!-- Website Icon -->
+<link rel="icon" href="../images/Scenery.jpg" type="image/x-icon" />
 	</head>
 	<body>
 <header class="navbar navbar-bright navbar-fixed-top" role="banner">
@@ -36,16 +37,7 @@
         </li>
         <%}%>
       </ul>
-      <ul class="nav navbar-right navbar-nav">
-        <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="glyphicon glyphicon-search"></i></a>
-          <ul class="dropdown-menu" style="padding:12px;">
-            <form class="form-inline">
-              <button type="submit" class="btn btn-default pull-right"><i class="glyphicon glyphicon-search"></i></button><input type="text" class="form-control pull-left" placeholder="Search">
-            </form>
-          </ul>
-        </li>
-      </ul>
+ 
     </nav>
   </div>
 </header>
@@ -57,74 +49,48 @@
         <h1>Add Book
           <p class="lead"></p>
         </h1>
-        <!-- <h1>Storystrap
-          <p class="lead"></p>
-        </h1> -->
+
       </div>
       
     </div> 
   </div><!-- /cont -->
   
-  <!-- <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="top-spacer"> </div>
-      </div>
-    </div> 
-  </div>/cont -->
   
 </div>
 
 
-<div class="container col-6 p-5" id ='#myform' >
-  <div class="row gy-6">
-    
-    <div class="col-md-12"> 
-      
-      <div class="panel">
-        <div class="panel-body">
-          
-          
-          
+<div class="container col-6 p-5" id ='myform' >
+
           <!--/stories-->
             <div class="row">    
-              <form method="POST" action="/addBook/add">
+              <form method="POST" action="/addBook/add" class="form">
                 <div class="mb-3 form-control">
-                  <label for="Title">Title</label>
-                  <input type="text" placeholder="Enter Title" id="title" autocomplete="off" name="title"/>
+                  <label for="Title">Book Name</label>
+                  <input type="text" placeholder="Enter Book Name" id="title" autocomplete="off" name="title"/>
                 </div>
+                <br>
                 <div class="mb-3 form-control">
                   <label for="Author">Author</label>
                   <input type="text" placeholder="Enter Author Name" id="author" autocomplete="off" name="author"/>
                 </div>
+                <br>
+
                 <div class="mb-3 form-control">
                   <label for="Genre">Genre</label>
-                  <input type="text" placeholder="Enter Genre" id="genre" autocomplete="off" name="genre"/>
+                  <input type="text" placeholder="Enter Book Genre" id="genre" autocomplete="off" name="genre"/>
                 </div>
+                <br>
                 <div class="mb-3 form-control">
                   <label for="Image">Image</label>
-                  <input type="file" placeholder="Enter Image" id="image" name="image"/>
+                  <input type="file" placeholder="Enter Book Image" id="image" name="image"/>
                 </div>
                 <br>
                 <br>
-                <button type="submit">Add</button>
+                <button type="submit">Add Book</button>
                 
               </form>
             </div>
-          
-          <!--/stories-->
-          
-          
-          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
-        
-          
-        </div>
-      </div>
-                                                                                       
-	                                                
-                                                      
-   	</div><!--/col-12-->
-  </div>
+
 </div>
                                                 
              <br>
@@ -146,24 +112,17 @@
   </div>
 </div>
 
-<footer>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <ul class="list-inline">
-          <li><i class="icon-facebook icon-2x"></i></li>
-          <li><i class="icon-twitter icon-2x"></i></li>
-          <li><i class="icon-google-plus icon-2x"></i></li>
-          <li><i class="icon-pinterest icon-2x"></i></li>
-        </ul>
-        
-      </div>
-      <div class="col-sm-6">
-          <p class="pull-right">Built with <i class="icon-heart-empty"></i> at <a href="http://www.bootply.com">Bootply</a></p>      
-      </div>
-    </div>
+<!-- Footer -->
+<footer class="page-footer font-small unique-color-dark pt-2 fixed-bottom">
+    
+  <!-- Copyright -->
+  <div class="footer-copyright text-center py-3">© 2022 Copyright:
+    <a href="/home"> MyLibraryApp</a>
   </div>
+  <!-- Copyright -->
+
 </footer>
+<!-- Footer end -->
 	<!-- script references -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
 		<script src="js/bootstrap.min.js"></script>
