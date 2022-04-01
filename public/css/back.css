@@ -100,6 +100,13 @@ body {
 	background: rgba(5, 216, 205, 0.959);
 }
 
+.form-control input:hover {
+	text-align: start;
+	outline: 0;
+	border-color: #777;	
+	background: rgba(169, 236, 233, 0.959);
+	transition: ease-in-out;
+}
 .form button {
 	border-radius: 4px;
 	display: block;
@@ -122,11 +129,18 @@ body {
 	border-color: #777;	
 	background: rgb(77, 192, 238);	
 }
-#textarea1 :focus{
+#textarea1:focus{
 	text-align: start;
 	outline: 0;
 	border-color: #777;	
 	background: rgba(5, 216, 205, 0.959);
+}
+
+#textarea1:hover{
+	border-color: #777;	
+	background: rgba(169, 236, 233, 0.959);
+	transition: ease-in-out;
+	transition-delay: 20ms;
 }
 
 

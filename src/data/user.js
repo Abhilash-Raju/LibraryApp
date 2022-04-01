@@ -1,34 +1,21 @@
-const ROLE ={
-
-    ADMIN :'admin',
-    BASIC :'basic'
-}
 var users=[{
     "id":1,
     "userid":"aiswaryawalter@gmail.com",
-    "pwdid":"aiswarya",
-    "role":ROLE.BASIC
-},
+    "pwdid":"aiswarya"},
 {
     "id":2,
     "userid":"surya@gmail.com",
-    "pwdid":"surya",
-    "role":ROLE.BASIC
-
+    "pwdid":"surya"
 },
 {
     "id":3,
     "userid":"bazith@gmail.com",
-    "pwdid":"bazith",
-    "role":ROLE.BASIC
-},
+    "pwdid":"bazith"},
 {
     "id":4,
     "userid":"admin@domain.com",
-    "pwdid":"admin",
-    "role":ROLE.ADMIN
-}
+    "pwdid":"Admin@1234"}
 ]
 
 
-module.exports={ROLE, users};
+module.exports=users;

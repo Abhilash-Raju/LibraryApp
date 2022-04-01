@@ -15,7 +15,7 @@ signupRouter.get('/',function(req,res){
 signupRouter.get("/adduser",function(req,res){
     
     let adduser = {
-        _id:new mongoose.Types.ObjectId(),
+        "_id":new mongoose.Types.ObjectId(),
         "userid":req.param("userid"),
         "pwdid":req.param("pwdid")
     };
@@ -23,6 +23,7 @@ signupRouter.get("/adduser",function(req,res){
     alert('Hi');
     let newuser = Signupdata(adduser);
     newuser.save(); //Saving in Database
+
     users.push(adduser); //Saving in local user.js file in data folder
     console.log(users);
     res.redirect("/login");

@@ -2,11 +2,8 @@ const express = require('express');
 const loginRouter = express.Router();
 const user = require('../data/user');
 let alert = require('alert'); 
-// const {Signupdata} = require("../model/Signupdata");
-// const SignupSchema = require("../model/Signupdata");
 
-
-function router(nav,authUser){
+function router(nav){
 loginRouter.get('/',function(req,res){
 
     res.render('login',{nav,title:'Login'});
@@ -15,7 +12,7 @@ loginRouter.get('/',function(req,res){
 
 // User Authentication
 
-loginRouter.get("/check",authUser,function(req,res){
+loginRouter.get("/check",function(req,res){
     var checkuser = {
         "userid":req.param("userid"),
         "pwdid":req.param("pwdid")
@@ -24,13 +21,17 @@ loginRouter.get("/check",authUser,function(req,res){
     console.log(checkuser);
     var flag=false;
     
-//    var flagg = user.find((e)=>{
        for(let i=0;i<user.length;i++){
         
         if((checkuser.userid==user[i].userid && checkuser.pwdid==user[i].pwdid))
         {
-            // alert (signupdata)
             flag=true;
+
+            if ((checkuser.userid=='admin@domain.com')&& (checkuser.pwdid =='Admin@1234'))
+            {   console.log(flag)
+                flag=true;
+                alert("Hello Admin")
+            }
             break;
         }
         else{
@@ -41,7 +42,7 @@ loginRouter.get("/check",authUser,function(req,res){
         console.log(flag);
 
 if(flag==true){
-    alert("User Verified.Click to continue");
+    alert("User Verified");
     res.redirect("/home")
 }
 else{

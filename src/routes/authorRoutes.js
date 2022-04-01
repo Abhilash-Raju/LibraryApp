@@ -1,6 +1,7 @@
 const express = require("express");
 const Authordata = require("../model/Authordata");
 const authorRouter =express.Router();
+
 function router(nav){
    
     // All the Authors Routing    
@@ -52,6 +53,7 @@ function router(nav){
             }
         })
     })
+    
     authorRouter.post('/update', function (req, res) {
 
         Authordata.findByIdAndUpdate(req.body.id, { $set: req.body }, function (err, data) {
