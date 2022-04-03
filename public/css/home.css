@@ -10,7 +10,11 @@ body{
     background:rgb(0, 0, 0);
     opacity: .75;
     width:100%;
-      
+}
+.navbar li{
+ padding: 3px; 
+
+
 }
 .navbar li a:hover{
     background-color:rgba(20, 66, 66, 0.842) ;

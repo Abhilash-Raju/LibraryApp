@@ -1,7 +1,7 @@
 var users=[{
     "id":1,
     "userid":"aiswaryawalter@gmail.com",
-    "pwdid":"aiswarya"},
+    "pwdid":"Aisw@rya1"},
 {
     "id":2,
     "userid":"surya@gmail.com",
@@ -10,12 +10,8 @@ var users=[{
 {
     "id":3,
     "userid":"bazith@gmail.com",
-    "pwdid":"bazith"},
-{
-    "id":4,
-    "userid":"admin@domain.com",
-    "pwdid":"Admin@1234"}
-]
+    "pwdid":"bazith"
+}]
 
 
 module.exports=users;

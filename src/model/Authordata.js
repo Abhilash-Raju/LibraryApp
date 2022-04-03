@@ -10,7 +10,10 @@ const Schema = mongoose.Schema;
 // Creating a new Schema named BookSchema using constructor Schema
 const AuthorSchema = new Schema({
     title: String,
-    image: String,
+    image: {
+        data: Buffer,
+        contentType: String
+    },
     about: String,
 });
 

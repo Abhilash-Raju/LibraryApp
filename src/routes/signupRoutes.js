@@ -1,33 +1,46 @@
 const express = require('express'); 
 const signupRouter = express.Router();
 const users = require('../data/user');
-const {Signupdata} = require("../model/Signupdata");
+const Signupdata = require("../model/Signupdata");
 let alert = require('alert'); 
-const { default: mongoose } = require('mongoose');
+// const { default: mongoose } = require('mongoose');
 
 function router(nav){
 signupRouter.get('/',function(req,res){
-
-    res.render('signup',{nav,title:'Sign Up'});
-    
-})
+    Signupdata.find({}, (err, items) => {
+        if (err) {
+            console.log(err.code);
+            res.status(500).send('Error has occurred', err);          
+        }
+        else {
+            res.render('signup',{nav,title:'Sign Up'});
+        }
+    })
+});
 
 signupRouter.get("/adduser",function(req,res){
     
     let adduser = {
-        "_id":new mongoose.Types.ObjectId(),
+        "name":req.param("name"),
         "userid":req.param("userid"),
         "pwdid":req.param("pwdid")
     };
+    Signupdata.find(adduser, (err, adduser) => {
+        if (err) {
+            console.log(err.code);
+            res.status(500).send('Error has occurred', err);          
+        }
+        else {
+                alert('Hi');
+                let newuser = Signupdata(adduser);
+                newuser.save(); //Saving in Database
 
-    alert('Hi');
-    let newuser = Signupdata(adduser);
-    newuser.save(); //Saving in Database
-
-    users.push(adduser); //Saving in local user.js file in data folder
-    console.log(users);
-    res.redirect("/login");
-    })
+                users.push(adduser); //Saving in local user.js file in data folder
+                console.log(users);
+                res.redirect("/login");
+       }
+    });
+});
     return signupRouter
 }
 

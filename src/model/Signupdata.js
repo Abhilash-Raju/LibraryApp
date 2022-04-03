@@ -10,23 +10,13 @@ const Schema1 = mongoose.Schema;
 
 // Creating a new Schema named SignupSchema using constructor Schema
 const SignupSchema = new Schema1({
-    _id: mongoose.Schema.Types.ObjectId,
+    name: String,
     userid: {type: String,required:true },
     pwdid: {type: String,required:true }
 });
-
-// hash the password
-// SignupSchema.methods.generateHash = function(pwdid) {
-//     return bcrypt.hashSync(pwdid, bcrypt.genSaltSync(8), null);
-//   };
-  
-  // checking if password is valid
-  // SignupSchema.methods.validPassword = function(pwdid) {
-  //   return bcrypt.compareSync(pwdid, this.pwdid);
-  // };
 
 // In order to use the new Schema created we need to create a Model using mongoose.model package ("Collection Name", "Schema Name")
 const Signupdata = mongoose.model("signupdata",SignupSchema);
 
 // Exporting the Model created (Signupdata)
-module.exports = {Signupdata};
+module.exports = Signupdata;

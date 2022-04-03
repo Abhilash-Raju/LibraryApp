@@ -1,17 +1,23 @@
 const express = require('express'); 
-const loginRouter = express.Router();
-const user = require('../data/user');
 let alert = require('alert'); 
 
-function router(nav){
-loginRouter.get('/',function(req,res){
+// Taking in Locally defined user and admin data
+let user = require('../data/user');
+let admin = require('../data/admin');
 
-    res.render('login',{nav,title:'Login'});
-    
+// Acquiring Cloud Database Model defined
+// const Signupdata = require("../model/Signupdata");
+
+const loginRouter = express.Router();
+
+function router(nav){
+
+// Login Form rendering
+loginRouter.get('/',function(req,res){
+    res.render('login',{nav,title:'Login'});  
 })
 
 // User Authentication
-
 loginRouter.get("/check",function(req,res){
     var checkuser = {
         "userid":req.param("userid"),
@@ -20,37 +26,52 @@ loginRouter.get("/check",function(req,res){
     
     console.log(checkuser);
     var flag=false;
-    
-       for(let i=0;i<user.length;i++){
+    var adminflag = false;
+
+    // Checking already existing locally available users and admin
+
+    for(let i=0;i<admin.length;i++){
+        if(checkuser.userid==admin[i].userid && checkuser.pwdid==admin[i].pwdid){
+            console.log(`Admin input is :${checkuser}`)
+            adminflag=true;
+            break;
+        }
+        else{
+            adminflag=false;
+        }
+    };
+
+    for(let i=0;i<user.length;i++){
         
         if((checkuser.userid==user[i].userid && checkuser.pwdid==user[i].pwdid))
         {
+            console.log(`User input is :${checkuser}`)
             flag=true;
-
-            if ((checkuser.userid=='admin@domain.com')&& (checkuser.pwdid =='Admin@1234'))
-            {   console.log(flag)
-                flag=true;
-                alert("Hello Admin")
-            }
             break;
         }
         else{
                 flag=false;
             }
-        };
+    };
 
-        console.log(flag);
+        console.log(`User flag is :${flag}`);
+        console.log(`Admin flag is :${adminflag}`);
 
-if(flag==true){
-    alert("User Verified");
-    res.redirect("/home")
-}
-else{
-    alert("User Verification Failed");
-    res.redirect("/signup");
-}
+        if(flag==true){
+            alert("User Verified");
+            res.redirect("/newhome")
+        }
+        else if (adminflag==true){
+            alert("Hello Admin");
+            res.redirect("/home")
+        }
+        else{
+            alert("User Verification Failed");
+            res.redirect("/signup");
+        }
 
-});
+    });
+
 
   return loginRouter
 

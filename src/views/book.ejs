@@ -14,6 +14,7 @@
 		<![endif]-->
 		<link href="/css/styles.css" rel="stylesheet">
     <link href="/css/back.css" rel="stylesheet">
+    
 <!-- Website Icon -->
 <link rel="icon" href="../images/Scenery.jpg" type="image/x-icon" />
 	</head>
@@ -27,7 +28,6 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a href="/home" class="navbar-brand">Home</a>
     </div>
     <nav class="collapse navbar-collapse" role="navigation">
       <ul class="nav navbar-nav">
@@ -73,43 +73,57 @@
           
           
           
-    <section>
-            <div class="container py-3">
-              <div class="card cardboard">
-                <div class="row ">
-                  <div class="col-md-4">
-                      <img class="rounded-circle"  src="../images/<%=book.image%>" class="w-100">
-                    </div>
-                    <div class="col-md-8 px-3">
-                      <div class="card-block px-3">
-                        <h4 class="card-title"><%=book.title%></h4>
-                        Author : <%=book.author%>
-                        <hr>
-                        <p class="card-text"><%=book.about%></p>
-
-                        <form action="/books/edit" method="POST">
-                        <input type="hidden" name="id" value="<%=book._id%>">
-                        <button id="editbtn" type="submit" class = "btn btn-success btn-sm" style="float: right;">Edit Book</button>
-                        </form>
-
-                        <form action="/books/delete" method="POST">
-                        <input type="hidden" name="id" value="<%=book._id%>">
-                        <button id="dltbtn" type="submit" class = "btn btn-danger btn-sm" style="float: right; margin-right: 25px">Delete Book</button>
-                        </form>
-
-                        
-                      </div>
-                    </div>
-          
-                  </div>
-                </div>
-              </div>
-            </div>
-    </section>
-          
-          
-          <!-- <a href="/" class="btn btn-primary pull-right btnNext">More <i class="glyphicon glyphicon-chevron-right"></i></a> -->
+          <div class="card mb-4">
+                
+            <!--Card image-->
+            <div class="view overlay ">
         
+          <div class="col-md-2 col-sm-3 text-center">
+         
+            <a class="story-title" href="#">
+              <img src="../images/<%=book.image%>"  style="width:100px;height:100px" class="img-circle">
+
+            </a>
+          </div>
+          <div class="col-md-10 col-sm-9">
+            <h3><%=book.title%></h3>
+            <div class="row">
+              <div class="col-xs-9">
+                <h4><span class="label label-default"><%=book.author%></span></h4><h4>
+                <small style="font-family:courier,'new courier';" class="text-muted"><%=book.genre%> 
+                 
+                </h4></div>
+              <div class="col-xs-3"></div>
+            </div>
+            <br><br>
+          </div>
+           <!--Card content-->
+           <div class="card-body">
+            <% if(user) { %>
+              <form action="/books/edit" method="POST">
+              <input type="hidden" name="id" value="<%=book._id%>">
+              <button id="editbtn" type="submit" class = "btn btn-success btn-sm" style="float: right;">Edit Book</button>
+              </form>
+
+              <form action="/books/delete" method="POST">
+              <input type="hidden" name="id" value="<%=book._id%>">
+              <button id="dltbtn" type="submit" class = "btn btn-danger btn-sm" style="float: right; margin-right: 25px">Delete Book</button>
+              </form>
+              <%} else { %>
+                <form action="/books/edit" method="POST" class="hidden">
+                  <input type="hidden" name="id" value="<%=book._id%>">
+                  <button id="editbtn" type="submit" class = "btn btn-success btn-sm" style="float: right;">Edit Book</button>
+                  </form>
+  
+                  <form action="/books/delete" method="POST" class="hidden">
+                  <input type="hidden" name="id" value="<%=book._id%>">
+                  <button id="dltbtn" type="submit" class = "btn btn-danger btn-sm" style="float: right; margin-right: 25px">Delete Book</button>
+                  </form>
+                <% } %>
+    
+        </div>
+        </div>
+        </div>  
           
         </div>
       </div>

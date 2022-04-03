@@ -12,7 +12,10 @@ const BookSchema = new Schema({
     title: String,
     author: String,
     genre: String,
-    image: String
+    image: {
+        data: Buffer,
+        contentType: String
+    }
 });
 
 // In order to use the new Schema created we need to create a Model using mongoose.model package ("Collection Name", "Schema Name")
