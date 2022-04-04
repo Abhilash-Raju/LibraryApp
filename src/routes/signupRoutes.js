@@ -25,10 +25,11 @@ signupRouter.get("/adduser",function(req,res){
         "userid":req.param("userid"),
         "pwdid":req.param("pwdid")
     };
-    Signupdata.find(adduser, (err, adduser) => {
+    
+    Signupdata.create(adduser, (err, adduser) => {
         if (err) {
             console.log(err.code);
-            res.status(500).send('Error has occurred', err);          
+            res.status(500).send({err: 'Error has occurred'});          
         }
         else {
                 alert('Hi');

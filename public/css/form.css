@@ -40,10 +40,12 @@ body {
  #myform {
 	transition-property: 0.5;
 	max-width: 550px;
-	background: linear-gradient(90deg, aqua 0%, dodgerblue 100%);	
+	background: linear-gradient(90deg, aqua 10%, rgb(223, 241, 237) 70%);	
 	border-radius: 5px;
 	padding: 30px 60px 0 30px;
 	align-items: center;
+	box-shadow: 10px 1px 68px 40px rgb(0, 33, 61);
+
 }
 
 .form {

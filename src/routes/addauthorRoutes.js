@@ -58,11 +58,11 @@ function router(nav){
     // Add Authors Page rendering
     addauthorRouter.get('/',(req,res)=>{
         res.render("addAuthor",{nav,
-        title:'Add Authors'});
+        title:'Add Author'});
     });
     
     // Adding the Authors
-    addauthorRouter.post('/add',upload.single('image'),(req,res)=>{
+    addauthorRouter.post('/add',upload.single(`image`),(req,res)=>{
         // res.send("Hi I am Added")
        let item = {
            title: req.body.title,

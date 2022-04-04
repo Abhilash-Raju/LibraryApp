@@ -4,6 +4,7 @@ let alert = require('alert');
 // Taking in Locally defined user and admin data
 let user = require('../data/user');
 let admin = require('../data/admin');
+const Signupdata = require('../model/Signupdata');
 
 // Acquiring Cloud Database Model defined
 // const Signupdata = require("../model/Signupdata");
@@ -29,7 +30,7 @@ loginRouter.get("/check",function(req,res){
     var adminflag = false;
 
     // Checking already existing locally available users and admin
-
+    // Signupdata.find().then(function(checkuser){
     for(let i=0;i<admin.length;i++){
         if(checkuser.userid==admin[i].userid && checkuser.pwdid==admin[i].pwdid){
             console.log(`Admin input is :${checkuser}`)
@@ -45,7 +46,7 @@ loginRouter.get("/check",function(req,res){
         
         if((checkuser.userid==user[i].userid && checkuser.pwdid==user[i].pwdid))
         {
-            console.log(`User input is :${checkuser}`)
+            console.log('User input is '+ checkuser)
             flag=true;
             break;
         }
@@ -70,9 +71,9 @@ loginRouter.get("/check",function(req,res){
             res.redirect("/signup");
         }
 
-    });
+        });
 
-
+    // });
   return loginRouter
 
 }

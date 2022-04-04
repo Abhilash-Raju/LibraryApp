@@ -16,7 +16,7 @@
 .navbar li a:hover{
     background-color:rgba(20, 66, 66, 0.842) ;
     border-radius: 10px ;
-	color: #1a9cf3;
+	color: #a2cdea;
 	font-size: 15px;
 	font-weight: bold;
 }
@@ -47,7 +47,7 @@ body {
  #myform {
 	transition-property: 0.5;
 	max-width: 550px;
-	background: linear-gradient(90deg, aqua 0%, dodgerblue 100%);	
+	background: linear-gradient(90deg, aqua 10%, rgb(223, 241, 237) 70%);	
 	border-radius: 5px;
 	padding: 30px 60px 0 30px;
 	align-items: center;
@@ -127,13 +127,13 @@ body {
 	text-align: start;
 	outline: 0;
 	border-color: #777;	
-	background: rgb(77, 192, 238);	
+	background: rgb(180, 247, 247);	
 }
 #textarea1:focus{
 	text-align: start;
 	outline: 0;
 	border-color: #777;	
-	background: rgba(5, 216, 205, 0.959);
+	background: rgba(169, 236, 233, 0.959);
 }
 
 #textarea1:hover{
@@ -145,11 +145,14 @@ body {
 
 
 .container .mainbody{
-	position: relative;
-	border-radius: 5px;
+	border-radius: 20px;
+	margin: -0.1rem;
+	width:101%;
+	overflow: hidden;
 	min-width: 400px;
 	border: 3px solid black;
-	background: linear-gradient(90deg, aqua 0%, dodgerblue 100%);	
+	background: linear-gradient(90deg, aqua 10%, rgb(223, 241, 237) 70%);	
+	box-shadow: 10px 1px 68px 40px rgb(0, 33, 61);
 }
 
 h3{
